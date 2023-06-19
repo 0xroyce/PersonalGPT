@@ -16,3 +16,7 @@ This is a fork of the original project, with the following changes:
 4. Run `streamlit run main.py`
 5. Open your browser at http://localhost:8501
 6. Enjoy!
+
+<h2>Contact</h2>
+
+[Petr Royce @ Twitter](https://twitter.com/petrroyce)
