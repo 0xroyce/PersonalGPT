@@ -40,11 +40,15 @@ else:
 
 # Create a RetrievalQA chain
 chain = RetrievalQA.from_chain_type(
-    llm=ChatOpenAI(model="gpt-3.5-turbo-16k-0613"),
+    llm=ChatOpenAI(model="gpt-3.5-turbo-0613"),
     retriever=index.vectorstore.as_retriever(search_kwargs={"k": 1}),
 )
 
 # Run query when button is clicked
 if st.button('Run Query'):
-    result = chain.run(query)
-    st.write(result)
+    try:
+        result = chain.run(query)
+        st.write(result)
+    except Exception as e:
+        st.write("An error occurred while processing your request. Please try again later.")
+        print(e)  # Log the error for debugging
